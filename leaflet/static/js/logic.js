@@ -6,7 +6,7 @@ function circleSize(magnitude) {
     return (magnitude * 20000);
   }
 
-//circle color for each magnitude
+//circle color for depth
 function circleColor(depth) {
     switch(true) {
       case depth > 90:
@@ -23,6 +23,7 @@ function circleColor(depth) {
         return "limegreen";
     }
   }
+
   
   
 
@@ -62,7 +63,8 @@ var legend = L.control({ position: 'bottomright' });
 
 legend.onAdd = function(map) {
   var div = L.DomUtil.create('div', 'info legend');
-  var mag = [0, 1, 2, 3, 4, 5];
+  var mag = ['-10-10', '10-30', '30-50', '50-70', '70-90', '90+'];
+  // var mag = [0, 1, 2, 3, 4, 5];
 
   var colors = [
     "#98ee00",
@@ -72,6 +74,7 @@ legend.onAdd = function(map) {
     "#ea822c",
     "#ea2c2c"
   ];
+
   
   div.innerHTML += '<h4>Magnitude Level</h4><hr>';
 
